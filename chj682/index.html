@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CHJ_HomePage</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+        }
+
+        /* 背景样式 */
+        body {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("image/2024-08-19 134154.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            animation: backgroundShift 20s ease infinite;
+        }
+
+        /* 背景轻微色彩旋转 */
+        @keyframes backgroundShift {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 50px 0 20px;
+            background: linear-gradient(45deg, #FF69B4, #FFD700, #8A2BE2);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: colorShift 4s linear infinite;
+        }
+
+        @keyframes colorShift {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        /* 链接样式 */
+        h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+            text-shadow: 0 0 8px rgba(255, 105, 180, 0.7);
+        }
+
+        a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        a:hover {
+            color: #FF1493;
+            transform: scale(1.1);
+            text-shadow: 0 0 15px rgba(255, 20, 147, 0.8), 0 0 25px rgba(255, 105, 180, 0.6);
+        }
+        a:link {
+            color: #FFC0CB;
+        }
+
+        /* 鼠标粒子效果样式 */
+        #particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #FF69B4, #FF1493);
+            border-radius: 50%;
+            opacity: 0;
+            animation: fadeOut 1.5s forwards;
+            box-shadow: 0 0 8px rgba(255, 105, 180, 0.6), 0 0 12px rgba(255, 20, 147, 0.8);
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+
+        /* 下雨效果样式 */
+        .rain {
+            position: fixed;
+            width: 2px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 1px;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 1;
+            }
+        }
+
+        /* 增强雨滴速度和数量 */
+        .rain-fast {
+            animation-duration: 5s;
+        }
+
+        .rain-slow {
+            animation-duration: 6s;
+        }
+    </style>
+</head>
+<body>
+    <div id="particle-container"></div>
+
+    <!-- 页面标题 -->
+    <h1>Welcome to HomePage of J</h1>
+	
+	   <!-- 个人信息表格 -->
+<div style="margin-top: 30px; padding: 20px; border-radius: 15px; background: rgba(255, 255, 255, 0.1); box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); width: 60%; text-align: center;">
+    <h2 style="margin-bottom: 20px; font-size: 2em; color: #FF69B4; text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);">About Me</h2>
+    <table style="width: 100%; border-collapse: collapse; font-size: 1.2em; color: #FFFFFF; text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);">
+		<tr style="background: rgba(255, 105, 180, 0.2);">
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">Name</td>
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">嵇桦杰</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">Age</td>
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">18</td>
+        </tr>
+		<tr style="background: rgba(255, 105, 180, 0.2);">
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">Major</td>
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">挖掘机专业</td>
+        </tr>
+        <tr>
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">Hobbies</td>
+            <td style="padding: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">Ping-pong,Literature,Music,Trip</td>
+        </tr>
+        
+    </table>
+</div>
+
+    <!-- 页面链接 -->
+    <h3><a href="web/nailong.html">Press here to my beloved</a></h3>
+    <h3><a href="web/songs.html">Press here to my songs</a></h3>
+    <h3><a href="web/games.html">Press here to my games</a></h3>
+    <h3><a href="web/heart.html">Press here to my heart</a></h3>
+	<h3>press here to return to dorm</h3>
+
+    <!-- 粒子效果 -->
+    <script>
+        const particleContainer = document.getElementById('particle-container');
+        document.addEventListener('mousemove', (event) => {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${event.clientX}px`;
+            particle.style.top = `${event.clientY}px`;
+
+            particleContainer.appendChild(particle);
+
+            particle.addEventListener('animationend', () => {
+                particle.remove();
+            });
+        });
+
+        /* 下雨效果 */
+        let maxRainDrops = 75; // 最大雨滴数量
+let currentRainDrops = 0; // 当前雨滴数量
+
+const createRain = () => {
+    if (currentRainDrops >= maxRainDrops) return; // 如果达到最大数量，不再创建
+    const rain = document.createElement('div');
+    rain.className = `rain ${Math.random() > 0.5 ? 'rain-fast' : 'rain-slow'}`;
+    rain.style.left = `${Math.random() * 100}vw`;
+    document.body.appendChild(rain);
+
+    currentRainDrops++; // 增加当前雨滴计数
+
+    rain.addEventListener('animationend', () => {
+        rain.remove();
+        currentRainDrops--; // 动画结束时减少计数
+    });
+};
+
+// 生成雨滴的间隔时间
+setInterval(createRain, 250);
+
+    </script>
+</body>
+</html>
